@@ -26,24 +26,126 @@
         };
     };
 
+    behaviors {
+        scrn_full: scrn_full {
+            compatible = "zmk,behavior-macro";
+            label = "Screenshot Fullscreen";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(LG(N4)))>;    // Shift+Ctrl+Gui+4
+        };
+
+        scrn_win: scrn_win {
+            compatible = "zmk,behavior-macro";
+            label = "Screenshot Window";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(N4))>;        // Shift+Gui+4
+        };
+
+        gui_find: gui_find {
+            compatible = "zmk,behavior-macro";
+            label = "Mac Spotlight / Finder Search";
+            #binding-cells = <0>;
+            bindings = <&kp LG(F)>;             // Gui+F
+        };
+
+        ctl_up: ctl_up {
+            compatible = "zmk,behavior-macro";
+            label = "Ctrl Up";
+            #binding-cells = <0>;
+            bindings = <&kp LC(UP)>;
+        };
+
+        ctl_down: ctl_down {
+            compatible = "zmk,behavior-macro";
+            label = "Ctrl Down";
+            #binding-cells = <0>;
+            bindings = <&kp LC(DOWN)>;
+        };
+
+                lca_u: lca_u {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+U";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LG(U)))>;   // Ctrl+Alt+Cmd+U
+        };
+
+        lca_i: lca_i {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+I";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LG(I)))>;   // Ctrl+Alt+Cmd+I
+        };
+
+        lca_left: lca_left {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+Left";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LG(LEFT)))>;
+        };
+
+        lca_down: lca_down {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+Down";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LG(DOWN)))>;
+        };
+
+        lca_up: lca_up {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+Up";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LG(UP)))>;
+        };
+
+        lca_right: lca_right {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+Right";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LG(RIGHT)))>;
+        };
+
+        lca_ent: lca_ent {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+Enter";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LG(RET)))>;
+        };
+
+        lca_j: lca_j {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+J";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LG(J)))>;
+        };
+
+        lca_k: lca_k {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+K";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LG(K)))>;
+        };
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "default";
 // ------------------------------------------------------------------------------------------------------------
-// |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
+// |  ESC  |  1  |  2  |  3   |  4   |  5   |                 |LT0,6 |  7    |  8    |  9    |  0   |  `    |
+// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                 |  Y   |  U    |  I    |  O   |  P   | BKSPC |
+// | CTRL  |  A  |  S  |  D   |  F   |  G   |                 |  H   |  J    |  K    |  L   |  ;   |   '   |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE | | NO    |  N   |  M    |  ,    |  .   |  /   |  -   |
+//               | ALT | ALT  | GUI  | RAISE| SPACE | | ENTER | LOWER| RALT  | SHIFT | SHIFT |
+// ------------------------------------------------------------------------------------------------------------
             bindings = <
-&kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
-&kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
-&kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                 &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp RET    &kp SPACE  &mo RAISE  &kp RCTRL &kp RALT  &kp RGUI
-            >;
+&kp ESC   &kp N1    &kp N2    &kp N3   &kp N4    &kp N5                     &lt 0 N6   &kp N7    &kp N8    &kp N9    &kp N0    &kp GRAVE
+&kp TAB   &kp Q     &kp W     &kp E    &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
+&kp LCTRL &kp A     &kp S     &kp D    &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+&kp LSHFT &kp Z     &kp X     &kp C    &kp V     &kp B   &kp C_MUTE &none   &kp N     &kp M     &kp COMMA &kp DOT  
+           &kp LALT &kp LALT  &kp LGUI &mo RAISE &kp SPC            &kp RET &mo LOWER &kp RALT  &kp RSHFT &kp RSHFT
+       >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
@@ -71,37 +173,38 @@
         raise_layer {
             display-name = "raise";
 // ------------------------------------------------------------------------------------------------------------
-// | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-// |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-// |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-// |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-//                |      |       |       |      |      |  |      |      |      |       |      |
-            bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                  &trans    &trans    &trans   &trans    &trans  &trans
-&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                        &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
-&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                      &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
-&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &trans  &trans  &trans    &trans    &trans   &trans    &trans  &trans
-                        &trans       &trans       &trans       &trans        &trans  &trans  &trans    &trans    &trans   &trans
-            >;
+// | TRNS  | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS  | TRNS  | TRNS  | TRNS  | TRNS  | TRNS |
+// |  ESC  |  !   |  @   |  #   |  $   |  %   |  ^    |  &    |  *    |  (    |  )    | BKSPC |
+// | TRNS  | SFT+F6 | SCRN_FULL | SCRN_WIN | GUI_FIND | CTL↑ |  +   |  =    |  {    |  }    |  :    |   "   |
+// | TRNS  | UNDO | CUT  | COPY | PASTE| CTL↓ | TRNS | TRNS |  \    |  `    |  [    |  ]    |  ?   |  _   |
+//               | AD_WO_L | SLEEP | BATT | TRNS | TRNS |  TRNS | MO(3) | TRNS | TRNS | TRNS |
+// ------------------------------------------------------------------------------------------------------------
+bindings = <
+&trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
+&kp ESC    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &kp BSPC
+&trans     &kp LS(F6) &scrn_full &scrn_win  &gui_find  &ctl_up      &kp KP_PLUS &kp EQL   &kp LBRC   &kp RBRC   &kp COLON  &kp DQT
+&trans     &kp UNDO   &kp CUT    &kp COPY   &kp PASTE  &ctl_down    &trans     &trans     &kp BSLH   &kp GRAVE  &kp LBKT   &kp RBKT  &kp QMARK &kp UNDERSCORE
+             &ad wo_l &slp       &batt_lv   &trans     &trans       &trans     &mo 3      &trans     &trans     &trans
+>;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         adjust_layer {
-// ----------------------------------------------------------------------------------------------------------------------------
-// | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-// | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-// |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-// |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-//                    |         |         |         |         |         | |      |      |      |       |      |
-            display-name = "adjust";
-            bindings = <
-&bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                            &none &none &none &none &none &none
-&ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                         &none &none &none &none &none &none
-&none             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &none                                   &none &none &none &none &none &none
-&none             &none           &none           &none           &none           &none            &rgb_ug RGB_TOG &none  &none &none &none &none &none &none
-                                  &none           &none           &none           &none            &none           &none  &none &none &none &none
-            >;
+// ------------------------------------------------------------------------------------------------------------
+// |  NO   |  NO  |  NO  |  NO  |  NO  |  NO  |  NO   |  NO   |  NO   |  NO   |  NO   |  NO   |
+// | RGBTG |  NO  |  NO  |  NO  |  NO  |  NO  | LCA+U | LCA+I | PLAY  | PREV  | NEXT  | SLEEP |
+// | RMOD  | HUE+ | SAT+ | VAL+ |  NO  |  NO  | LCA←  | LCA↓  | LCA↑  | LCA→  | LCAENT|  NO   |
+// | MOD   | HUE- | SAT- | VAL- |  NO  |  NO  |  NO   |  NO   | LCA+J | LCA+K |  NO   |  NO   |
+//               |  NO  |  NO  |  NO  |  NO  |  NO   |  NO    |  NO   |  NO   |  NO   |  NO   |
+// ------------------------------------------------------------------------------------------------------------
+bindings = <
+&none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
+&rgb_tog &none  &none   &none   &none   &none   &lca_u  &lca_i  &kp C_PLAY &kp C_PREV &kp C_NEXT &kp SLP
+&rgb_rmod &rgb_hui &rgb_sai &rgb_vai &none   &none   &lca_left &lca_down &lca_up &lca_right &lca_ent &none
+&rgb_mod &rgb_hud &rgb_sad &rgb_vad &none   &none   &none   &none   &lca_j &lca_k &none   &none
+         &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
+>;
         };
 
     };
