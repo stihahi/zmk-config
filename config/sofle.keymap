@@ -204,7 +204,7 @@ bindings = <
 &trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
 &kp ESC    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &kp BSPC
 &trans     &shift_f6  &scrn_full &scrn_win  &gui_find  &ctl_up      &kp KP_PLUS &kp EQL   &kp LBRC   &kp RBRC   &kp COLON  &kp DQT
-&trans     &kp UNDO   &kp CUT    &kp COPY   &kp PASTE  &ctl_down    &trans     &trans     &kp BSLH   &kp GRAVE  &kp LBKT   &kp RBKT  &shift_qmark &shift_underscore
+&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &ctl_down    &trans     &trans     &kp BSLH   &kp GRAVE  &kp LBKT   &kp RBKT  &shift_qmark &shift_underscore
              &ad wo_l &slp       &batt_lv   &trans     &trans       &trans     &mo 3      &trans     &trans     &trans
 >;
 
