@@ -221,9 +221,9 @@ bindings = <
 // ------------------------------------------------------------------------------------------------------------
 bindings = <
 &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
-&rgb_tog &none  &none   &none   &none   &none   &lca_u  &lca_i  &kp C_PLAY &kp C_PREV &kp C_NEXT &kp SLP
-&rgb_rmod &rgb_hui &rgb_sai &rgb_vai &none   &none   &lca_left &lca_down &lca_up &lca_right &lca_ent &none
-&rgb_mod &rgb_hud &rgb_sad &rgb_vad &none   &none   &none   &none   &lca_j &lca_k &none   &none
+&rgb_ug RGB_TOG  &none          &none          &none          &none          &none          &lca_u   &lca_i   &kp C_PLAY  &kp C_PREV  &kp C_NEXT  &kp SLP
+&rgb_ug RGB_EFR  &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &none          &none          &lca_left &lca_down &lca_up     &lca_right  &lca_ent    &none
+&rgb_ug RGB_EFF  &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &none          &none          &none     &none     &lca_j      &lca_k      &none       &none
          &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
 >;
         };
