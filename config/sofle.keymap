@@ -63,67 +63,67 @@
             bindings = <&kp LC(DOWN)>;
         };
 
-                lca_u: lca_u {
+        lca_u: lca_u {
             compatible = "zmk,behavior-macro";
             label = "LCA+U";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(LG(U)))>;   // Ctrl+Alt+Cmd+U
+            bindings = <&kp LC(LA(U))>;   // Ctrl+Alt+Cmd+U
         };
 
         lca_i: lca_i {
             compatible = "zmk,behavior-macro";
             label = "LCA+I";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(LG(I)))>;   // Ctrl+Alt+Cmd+I
+            bindings = <&kp LC(LA(I))>;   // Ctrl+Alt+Cmd+I
         };
 
         lca_left: lca_left {
             compatible = "zmk,behavior-macro";
             label = "LCA+Left";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(LG(LEFT)))>;
+            bindings = <&kp LC(LA(LEFT))>;
         };
 
         lca_down: lca_down {
             compatible = "zmk,behavior-macro";
             label = "LCA+Down";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(LG(DOWN)))>;
+            bindings = <&kp LC(LA(DOWN))>;
         };
 
         lca_up: lca_up {
             compatible = "zmk,behavior-macro";
             label = "LCA+Up";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(LG(UP)))>;
+            bindings = <&kp LC(LA(UP))>;
         };
 
         lca_right: lca_right {
             compatible = "zmk,behavior-macro";
             label = "LCA+Right";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(LG(RIGHT)))>;
+            bindings = <&kp LC(LA(RIGHT))>;
         };
 
         lca_ent: lca_ent {
             compatible = "zmk,behavior-macro";
             label = "LCA+Enter";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(LG(RET)))>;
+            bindings = <&kp LC(LA(RET))>;
         };
 
         lca_j: lca_j {
             compatible = "zmk,behavior-macro";
             label = "LCA+J";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(LG(J)))>;
+            bindings = <&kp LC(LA(J))>;
         };
 
         lca_k: lca_k {
             compatible = "zmk,behavior-macro";
             label = "LCA+K";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(LG(K)))>;
+            bindings = <&kp LC(LA(K))>;
         };
 
         shift_f6: shift_f6 {
