@@ -198,14 +198,14 @@
 // |  ESC  |  !   |  @   |  #   |  $   |  %   |  ^    |  &    |  *    |  (    |  )    | BKSPC |
 // | TRNS  | SFT+F6 | SCRN_FULL | SCRN_WIN | GUI_FIND | CTL↑ |  +   |  =    |  {    |  }    |  :    |   "   |
 // | TRNS  | UNDO | CUT  | COPY | PASTE| CTL↓ | TRNS | TRNS |  \    |  `    |  [    |  ]    |  ?   |  _   |
-//               | AD_WO_L | SLEEP | BATT | TRNS | TRNS |  TRNS | MO(3) | TRNS | TRNS | TRNS |
+//               | BT_NXT | BT_CLR | TRNS | TRNS | TRNS |  TRNS | MO(3) | TRNS | TRNS | TRNS |
 // ------------------------------------------------------------------------------------------------------------
 bindings = <
 &trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
 &kp ESC    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &kp BSPC
 &trans     &shift_f6  &scrn_full &scrn_win  &gui_find  &ctl_up      &kp KP_PLUS &kp EQL   &kp LBRC   &kp RBRC   &kp COLON  &kp DQT
 &trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &ctl_down    &trans     &trans     &kp BSLH   &kp GRAVE  &kp LBKT   &kp RBKT  &shift_qmark &shift_underscore
-             &ad wo_l &slp       &batt_lv   &trans     &trans       &trans     &mo 3      &trans     &trans     &trans
+             &bt BT_NXT &bt BT_CLR       &trans   &trans     &trans       &trans     &mo 3      &trans     &trans     &trans
 >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
