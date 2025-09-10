@@ -213,7 +213,7 @@ bindings = <
         };
 
         adjust_layer {
-            display-name = "adjust"
+            display-name = "adjust";
 // ------------------------------------------------------------------------------------------------------------
 // |  NO   |  NO  |  NO  |  NO  |  NO  |  NO  |  NO   |  NO   |  NO   |  NO   |  NO   |  NO   |
 // | RGBTG |  NO  |  NO  |  NO  |  NO  |  NO  | LCA+U | LCA+I | PLAY  | PREV  | NEXT  |  NO   |
