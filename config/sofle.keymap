@@ -146,6 +146,48 @@
             #binding-cells = <0>;
             bindings = <&kp LS(MINUS)>;
         };
+
+        lca_e: lca_e {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+E";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(E))>;
+        };
+
+        lca_r: lca_r {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+R";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(R))>;
+        };
+
+        lca_t: lca_t {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+T";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(T))>;
+        };
+
+        lca_d: lca_d {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+D";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(D))>;
+        };
+
+        lca_f: lca_f {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+F";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(F))>;
+        };
+
+        lca_g: lca_g {
+            compatible = "zmk,behavior-macro";
+            label = "LCA+G";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(G))>;
+        };
     };
 
 
@@ -215,15 +257,15 @@ bindings = <
         adjust_layer {
             display-name = "adjust";
 // ------------------------------------------------------------------------------------------------------------
-// |  NO   |  NO  |  NO  |  NO  |  NO  |  NO  |  NO   |  NO   |  NO   |  NO   |  NO   |  NO   |
-// | RGBTG |  NO  |  NO  |  NO  |  NO  |  NO  | LCA+U | LCA+I | PLAY  | PREV  | NEXT  |  NO   |
+// |  NO   |  NO  |  NO  |LCA+E |LCA+R |LCA+T |  NO   |  NO   |  NO   |  NO   |  NO   |  NO   |
+// | RGBTG |  NO  |  NO  |LCA+D |LCA+F |LCA+G | LCA+U | LCA+I | PLAY  | PREV  | NEXT  |  NO   |
 // | RMOD  | HUE+ | SAT+ | VAL+ |  NO  |  NO  | LCA←  | LCA↓  | LCA↑  | LCA→  | LCAENT|  NO   |
 // | MOD   | HUE- | SAT- | VAL- |  NO  |  NO  |  NO   |  NO   | LCA+J | LCA+K |  NO   |  NO   |
 //               |  NO  |  NO  |  NO  |  NO  |  NO   |  NO    |  NO   |  NO   |  NO   |  NO   |
 // ------------------------------------------------------------------------------------------------------------
 bindings = <
-&none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
-&rgb_ug RGB_TOG  &none          &none          &none          &none          &none          &lca_u   &lca_i   &kp C_PLAY_PAUSE  &kp C_PREV  &kp C_NEXT  &none
+&none   &none   &none   &lca_e  &lca_r  &lca_t  &none   &none   &none   &none   &none   &none
+&rgb_ug RGB_TOG  &none          &none          &lca_d         &lca_f         &lca_g         &lca_u   &lca_i   &kp C_PLAY_PAUSE  &kp C_PREV  &kp C_NEXT  &none
 &rgb_ug RGB_EFR  &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &none          &none          &lca_left &lca_down &lca_up     &lca_right  &lca_ent    &none
 &rgb_ug RGB_EFF  &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &none          &none          &none     &none     &lca_j      &lca_k      &none       &none &none  &none
          &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
