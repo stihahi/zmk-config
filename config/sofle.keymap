@@ -8,7 +8,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
@@ -27,249 +26,85 @@
         };
     };
 
-    behaviors {
-        scrn_full: scrn_full {
-            compatible = "zmk,behavior-macro";
-            label = "Screenshot Fullscreen";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LC(LG(N4)))>;    // Shift+Ctrl+Gui+4
-        };
-
-        scrn_win: scrn_win {
-            compatible = "zmk,behavior-macro";
-            label = "Screenshot Window";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LG(N4))>;        // Shift+Gui+4
-        };
-
-        gui_find: gui_find {
-            compatible = "zmk,behavior-macro";
-            label = "Mac Spotlight / Finder Search";
-            #binding-cells = <0>;
-            bindings = <&kp LG(F)>;             // Gui+F
-        };
-
-        ctl_up: ctl_up {
-            compatible = "zmk,behavior-macro";
-            label = "Ctrl Up";
-            #binding-cells = <0>;
-            bindings = <&kp LC(UP)>;
-        };
-
-        ctl_down: ctl_down {
-            compatible = "zmk,behavior-macro";
-            label = "Ctrl Down";
-            #binding-cells = <0>;
-            bindings = <&kp LC(DOWN)>;
-        };
-
-        lca_u: lca_u {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+U";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(U))>;   // Ctrl+Alt+Cmd+U
-        };
-
-        lca_i: lca_i {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+I";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(I))>;   // Ctrl+Alt+Cmd+I
-        };
-
-        lca_left: lca_left {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+Left";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(LEFT))>;
-        };
-
-        lca_down: lca_down {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+Down";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(DOWN))>;
-        };
-
-        lca_up: lca_up {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+Up";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(UP))>;
-        };
-
-        lca_right: lca_right {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+Right";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(RIGHT))>;
-        };
-
-        lca_ent: lca_ent {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+Enter";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(RET))>;
-        };
-
-        lca_j: lca_j {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+J";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(J))>;
-        };
-
-        lca_k: lca_k {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+K";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(K))>;
-        };
-
-        shift_f6: shift_f6 {
-            compatible = "zmk,behavior-macro";
-            label = "Shift+F6";
-            #binding-cells = <0>;
-            bindings = <&kp LS(F6)>;
-        };
-
-        shift_qmark: shift_qmark {
-            compatible = "zmk,behavior-macro";
-            label = "Shift+Slash = ?";
-            #binding-cells = <0>;
-            bindings = <&kp LS(FSLH)>;
-        };
-
-        shift_underscore: shift_underscore {
-            compatible = "zmk,behavior-macro";
-            label = "Shift+Minus = _";
-            #binding-cells = <0>;
-            bindings = <&kp LS(MINUS)>;
-        };
-
-        lca_e: lca_e {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+E";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(E))>;
-        };
-
-        lca_r: lca_r {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+R";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(R))>;
-        };
-
-        lca_t: lca_t {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+T";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(T))>;
-        };
-
-        lca_d: lca_d {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+D";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(D))>;
-        };
-
-        lca_f: lca_f {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+F";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(F))>;
-        };
-
-        lca_g: lca_g {
-            compatible = "zmk,behavior-macro";
-            label = "LCA+G";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(G))>;
-        };
-    };
-
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "default";
-// ------------------------------------------------------------------------------------------------------------
-// |  ESC  |  1  |  2  |  3   |  4   |  5   |                 |LT0,6 |  7    |  8    |  9    |  0   |  `    |
-// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                 |  Y   |  U    |  I    |  O   |  P   | BKSPC |
-// | CTRL  |  A  |  S  |  D   |  F   |  G   |                 |  H   |  J    |  K    |  L   |  ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE | | NO    |  N   |  M    |  ,    |  .   |  /   |  -   |
-//               | ALT | ALT  | GUI  | RAISE| SPACE | | ENTER | LOWER| RALT  | SHIFT | SHIFT |
-// ------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------
+// | ESC  |  1  |  2  |  3  |  4  |  5  |                     |  6   |  7   |  8   |  9   |  0   |  `   |
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |                     |  Y   |  U   |  I   |  O   |  P   | BSPC |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |                     |  H   |  J   |  K   |  L   |  ;   |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  | MUTE  |  ---        |  N   |  M   |  ,   |  .   |  /   |  -   |
+//              | ALT | ALT | GUI |RAISE| SPACE |  ENTER      |LOWER | RALT | SHFT | SHFT |
+// ---------------------------------------------------------------------------------------------------------
             bindings = <
-&kp ESC   &kp N1    &kp N2    &kp N3   &kp N4    &kp N5                     &lt 0 N6   &kp N7    &kp N8    &kp N9    &kp N0    &kp GRAVE
-&kp TAB   &kp Q     &kp W     &kp E    &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
-&kp LCTRL &kp A     &kp S     &kp D    &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-&kp LSHFT &kp Z     &kp X     &kp C    &kp V     &kp B   &kp C_MUTE &none   &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp MINUS
-           &kp LALT &kp LALT  &kp LGUI &mo RAISE &kp SPC            &kp RET &mo LOWER &kp RALT  &kp RSHFT &kp RSHFT
-       >;
+&kp ESC   &kp N1    &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp GRAVE
+&kp TAB   &kp Q     &kp W    &kp E    &kp R     &kp T                       &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
+&kp LCTRL &kp A     &kp S    &kp D    &kp F     &kp G                       &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+&kp LSHFT &kp Z     &kp X    &kp C    &kp V     &kp B     &kp C_MUTE &none  &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp MINUS
+                    &kp LALT &kp LALT &kp LGUI  &mo RAISE &kp SPC    &kp RET &mo LOWER &kp RALT &kp RSHFT &kp RSHFT
+            >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
             display-name = "lower";
-// ----------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  F1  |  F2  |  F3  |  F4  |  F5       |                    |  F6   |  F7   |  F8   |  F9   |  F10  |  F11  |
-// |  `    |  1   |  2   |  3   |  4   |  5        |                    |  6    |  7    |  8    |  9    |  0    | BKSPC |
-// | TRNS  |  NO  |  NO  |  NO  | SCRL_UP | PGUP   |                    | LEFT  | DOWN  |  UP   | RIGHT |  NO   |  DEL  |
-// | TRNS  |  NO  |  NO  |  NO  | SCRL_DOWN | PGDN | TRNS  | TRNS       |  NO   |  NO   |  NO   |  NO   | LANG2 | LANG1 |
-//                | TRNS | TRNS | TRNS | TRNS      | TRNS  |  TRNS| TRNS  | TRNS  | TRNS  | TRNS |
-// ----------------------------------------------------------------------------------------------------------------------------
-bindings = <
-&kp ESC     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5      &kp F6      &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
-&kp GRAVE   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5      &kp N6      &kp N7     &kp N8     &kp N9     &kp N0     &kp BSPC
-&trans      &none      &none      &none      &msc SCRL_UP   &kp PG_UP   &kp LEFT    &kp DOWN   &kp UP     &kp RIGHT  &none      &kp DEL
-&trans      &none      &none      &none      &msc SCRL_DOWN   &kp PG_DN   &trans      &trans     &none      &none      &none   &none  &kp LANG2  &kp LANG1
-             &trans    &trans     &trans     &trans     &trans      &trans       &trans     &trans     &trans   &trans
->;
+// ---------------------------------------------------------------------------------------------------------
+// | ESC  |  F1  |  F2  |  F3  |  F4  |  F5   |                   |  F6  |  F7  |  F8  |  F9  |  F10  |  F11  |
+// |  `   |  1   |  2   |  3   |  4   |  5    |                   |  6   |  7   |  8   |  9   |  0    | BSPC  |
+// | TRNS | ---  | ---  | ---  |SCRL^ | PGUP  |                   | LEFT | DOWN |  UP  |RIGHT | ---   | DEL   |
+// | TRNS | ---  | ---  | ---  |SCRLv | PGDN  | TRNS  | TRNS      | ---  | ---  | ---  | ---  | LANG2 | LANG1 |
+//               | TRNS | TRNS | TRNS | TRNS  | TRNS  | TRNS      | TRNS | TRNS | TRNS | TRNS |
+// ---------------------------------------------------------------------------------------------------------
+            bindings = <
+&kp ESC   &kp F1 &kp F2 &kp F3 &kp F4         &kp F5                   &kp F6    &kp F7    &kp F8 &kp F9    &kp F10   &kp F11
+&kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4         &kp N5                   &kp N6    &kp N7    &kp N8 &kp N9    &kp N0    &kp BSPC
+&trans    &none  &none  &none  &msc SCRL_UP   &kp PG_UP                &kp LEFT  &kp DOWN  &kp UP &kp RIGHT &none     &kp DEL
+&trans    &none  &none  &none  &msc SCRL_DOWN &kp PG_DN &trans &trans  &none     &none     &none  &none     &kp LANG2 &kp LANG1
+                 &trans &trans &trans         &trans    &trans &trans  &trans    &trans    &trans &trans
+            >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         raise_layer {
             display-name = "raise";
-// ------------------------------------------------------------------------------------------------------------
-// | TRNS  | TRNS   | TRNS      | TRNS     | TRNS     | TRNS |                     |TRNS  | TRNS  | TRNS  | TRNS  | TRNS  | TRNS |
-// |  ESC  |  !     |  @        |  #       |  $       |  %   |                     | ^    |  &    |  *    |  (    |  )    | BKSPC |
-// | TRNS  | SFT+F6 | SCRN_FULL | SCRN_WIN | GUI_FIND | CTL↑ |                     |  +   |  =    |  {    |  }    |  :    |   "   |
-// | TRNS  | UNDO   | CUT       | COPY     | PASTE    | CTL↓ | TRNS | TRNS         |  \    |  `    |  [    |  ]    |  ?   |  _   |
-//               | BT_NXT | BT_CLR | TRNS | TRNS | TRNS |  TRNS | TRNS | TRNS | TRNS | TRNS |
-// ------------------------------------------------------------------------------------------------------------
-bindings = <
-&trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
-&kp ESC    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &kp BSPC
-&trans     &shift_f6  &scrn_full &scrn_win  &gui_find  &ctl_up      &kp KP_PLUS &kp EQL   &kp LBRC   &kp RBRC   &kp COLON  &kp DQT
-&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &ctl_down    &trans     &trans     &kp BSLH   &kp GRAVE  &kp LBKT   &kp RBKT  &shift_qmark &shift_underscore
-             &bt BT_NXT &bt BT_CLR       &trans   &trans     &trans       &trans     &trans      &trans     &trans     &trans
->;
+// ---------------------------------------------------------------------------------------------------------
+// | TRNS | TRNS   | TRNS      | TRNS     | TRNS     | TRNS  |                   | TRNS |  TRNS |  TRNS |  TRNS |  TRNS |  TRNS |
+// | ESC  |  !     |  @        |  #       |  $       |  %    |                   |  ^   |   &   |   *   |   (   |   )   | BSPC  |
+// | TRNS | SFT+F6 | SCRN FULL | SCRN WIN | GUI FIND | CTRL^ |                   |  +   |   =   |   {   |   }   |   :   |   "   |
+// | TRNS | UNDO   | CUT       | COPY     | PASTE    | CTRLv | TRNS  | TRNS      |  \   |   `   |   [   |   ]   |   ?   |   _   |
+//               |BT NEXT| BT CLR   | TRNS     | TRNS  | TRNS  | TRNS      | TRNS |  TRNS |  TRNS |  TRNS |
+// ---------------------------------------------------------------------------------------------------------
+            bindings = <
+&trans  &trans     &trans             &trans         &trans      &trans                        &trans      &trans    &trans    &trans    &trans       &trans
+&kp ESC &kp EXCL   &kp AT             &kp HASH       &kp DLLR    &kp PRCNT                     &kp CARET   &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR     &kp BSPC
+&trans  &kp LS(F6) &kp LS(LC(LG(N4))) &kp LS(LG(N4)) &kp LG(F)   &kp LC(UP)                    &kp KP_PLUS &kp EQL   &kp LBRC  &kp RBRC  &kp COLON    &kp DQT
+&trans  &kp K_UNDO &kp K_CUT          &kp K_COPY     &kp K_PASTE &kp LC(DOWN) &trans    &trans &kp BSLH    &kp GRAVE &kp LBKT  &kp RBKT  &kp LS(FSLH) &kp LS(MINUS)
+                   &bt BT_NXT         &bt BT_CLR     &trans      &trans       &trans    &trans &trans      &trans    &trans    &trans
+            >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         adjust_layer {
             display-name = "adjust";
-// ------------------------------------------------------------------------------------------------------------
-// |  NO   |  NO  |  NO  |LCA+E |LCA+R |LCA+T |  NO   |  NO   |  NO   |  NO   |  NO   |  NO   |
-// | RGBTG |  NO  |  NO  |LCA+D |LCA+F |LCA+G | LCA+U | LCA+I | PLAY  | PREV  | NEXT  |  NO   |
-// | RMOD  | HUE+ | SAT+ | VAL+ |  NO  |  NO  | LCA←  | LCA↓  | LCA↑  | LCA→  | LCAENT|  NO   |
-// | MOD   | HUE- | SAT- | VAL- |  NO  |  NO  |  NO   |  NO   | LCA+J | LCA+K |  NO   |  NO   |
-//               |  NO  |  NO  |  NO  |  NO  |  NO   |  NO    |  NO   |  NO   |  NO   |  NO   |
-// ------------------------------------------------------------------------------------------------------------
-bindings = <
-&none   &none   &none   &lca_e  &lca_r  &lca_t  &none   &none   &none   &none   &none   &none
-&rgb_ug RGB_TOG  &none          &none          &lca_d         &lca_f         &lca_g         &lca_u   &lca_i   &kp C_PLAY_PAUSE  &kp C_PREV  &kp C_NEXT  &none
-&rgb_ug RGB_EFR  &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &none          &none          &lca_left &lca_down &lca_up     &lca_right  &lca_ent    &none
-&rgb_ug RGB_EFF  &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &none          &none          &none     &none     &lca_j      &lca_k      &none       &none &none  &none
-         &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
->;
+// ---------------------------------------------------------------------------------------------------------
+// | ---     | ---  | ---  | LCA+E | LCA+R | LCA+T |                 | ---   | ---   | ---   | ---     | ---     | --- |
+// | RGB TOG | ---  | ---  | LCA+D | LCA+F | LCA+G |                 | LCA+U | LCA+I | PLAY  | PREV    | NEXT    | --- |
+// | RGB EFR | HUE+ | SAT+ | BRI+  | ---   | ---   |                 | LCA<- | LCAv  | LCA^  | LCA->   | LCA+ENT | --- |
+// | RGB EFF | HUE- | SAT- | BRI-  | ---   | ---   | ---   | ---     | LCA+J | LCA+K | ---   | ---     | ---     | --- |
+//                  | ---  | ---   | ---   | ---   | ---   | ---     | ---   | ---   | ---   | ---     |
+// ---------------------------------------------------------------------------------------------------------
+            bindings = <
+&none           &none           &none           &kp LC(LA(E)) &kp LC(LA(R)) &kp LC(LA(T))                &none            &none            &none            &none            &none            &none
+&rgb_ug RGB_TOG &none           &none           &kp LC(LA(D))   &kp LC(LA(F)) &kp LC(LA(G))                &kp LC(LA(U))    &kp LC(LA(I))    &kp C_PLAY_PAUSE &kp C_PREV       &kp C_NEXT       &none
+&rgb_ug RGB_EFR &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &none         &none                        &kp LC(LA(LEFT)) &kp LC(LA(DOWN)) &kp LC(LA(UP))   &kp LC(LA(RIGHT)) &kp LC(LA(RET)) &none
+&rgb_ug RGB_EFF &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &none         &none         &none   &none  &kp LC(LA(J))    &kp LC(LA(K))    &none            &none            &none            &none
+                                &none           &none           &none         &none         &none   &none  &none            &none            &none            &none
+            >;
         };
 
     };
